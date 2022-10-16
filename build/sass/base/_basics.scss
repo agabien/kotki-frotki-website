@@ -1,0 +1,26 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    &::selection {
+        color: var(--white);
+        background-color: var(--accentColor);
+    }
+}
+html {
+    scroll-behavior: smooth;
+}
+.container {
+    max-width: 100vw;
+    margin: 10vh 10vw;
+}
+@media (min-width: 641px) {
+    .container {
+        margin: 15vh 10vw;
+    }
+}
+@media (min-width: 1025px) {
+    .container {
+        margin: 20vh 10vw;
+    }
+}

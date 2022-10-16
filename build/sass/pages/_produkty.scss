@@ -1,0 +1,94 @@
+.products {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    grid-gap: 1rem;
+    min-height: 90vh;
+    .product {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 10px;
+        font-family: var(--textFont);
+        background-color: rgba(245, 245, 245, 0.733);
+        color: var(--black);
+        text-decoration: none;
+        cursor: pointer;
+        &__img {
+            flex-basis: 100%;            
+            position: relative;
+            overflow: hidden;
+            height: 300px;
+            img {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 100%;
+                transition: .3s linear;
+                &:hover {
+                    transform: translate(-50%, -50%) scale(1.1);
+                }
+            }
+        }
+        &__name {
+            flex-basis: 100%;
+            font-size: 22px;
+            font-weight: 600;
+            margin: 1rem 0;
+        }
+        &__btn {
+            @include btn-arrow;
+            width: 25%;
+            &:hover {      
+                left: -20px;
+                &::after {
+                    right: 5px;
+                }
+            }            
+        }
+    }
+}
+@media (min-width: 641px) {
+    .products {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-gap: 5rem 2rem;
+        .product {
+            &__btn {
+                @include btn-arrow;
+                width: 28%;
+                &:hover {      
+                    left: -20px;
+                    &::after {
+                        right: 5px;
+                    }
+                }  
+            }
+        }
+    }
+}
+@media (min-width: 1025px) {
+    .products {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        .product {
+            &__btn {
+                @include btn-arrow;
+                width: 26%;
+            }
+        }
+    }
+}
+@media (min-width: 1199px) {
+    .products {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        .product {
+            &__btn {
+                @include btn-arrow;
+                width: 20%;
+            }
+        }
+    }
+}

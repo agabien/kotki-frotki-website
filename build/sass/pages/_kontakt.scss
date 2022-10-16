@@ -1,0 +1,71 @@
+.form { 
+    overflow: hidden;   
+    &__text {
+        padding: 10px 0;
+        text-align: center;     
+    }
+    &__content {
+        width: 100%;
+        margin: auto;
+    }   
+    &__input {  
+        font-family: var(--textFont);        
+        display: block;
+        padding: 10px;   
+        margin: 30px auto;
+        width: 100%;
+        border: none;
+        border-bottom: 2px solid var(--black);
+        font-size: var(--normalFont);
+        color: var(--black);
+        transition: .2s linear;
+        &:focus, &:focus-visible, &:active {
+            border: 2px solid var(--accentColor);
+            outline: var(--accentColor);
+        }
+    }
+    &__textarea {
+        font-family: var(--textFont);  
+        min-height: 200px;
+        display: block;
+        padding: 10px;   
+        margin: 30px auto;
+        width: 100%;
+        border: none;
+        border-bottom: 2px solid var(--black);
+        font-size: var(--normalFont);
+        color: var(--black);
+        transition: .2s linear;
+        &:focus, &:focus-visible, &:active {
+            border: 2px solid var(--accentColor);
+            outline: var(--accentColor);
+        }
+    }
+    &__button {
+        @include btn-default;
+        margin-bottom: 0;
+    }
+    &__header {
+        margin-top: 0;
+    }
+}
+@media (min-width: 641px) {
+    .form {
+        &__content {
+            width: 70%;
+        }
+        &__text {
+            padding: 12px 0 24px;   
+        }
+    }     
+}
+@media (min-width: 1025px) {
+    .form {
+        &__content {
+            width: 50%;
+        }
+        &__text {
+            padding: 20px 0 30px;   
+        }
+    }     
+}
